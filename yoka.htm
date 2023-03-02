@@ -4,52 +4,83 @@
         *{
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
    .main{
     
     width: 200px;
     height: 200px;
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
     position: relative;
    
-    animation:rotate 30s linear infinite;
+    -webkit-animation:rotate 30s linear infinite;
+   
+            animation:rotate 30s linear infinite;
+   }
+   @-webkit-keyframes rotate{
+    0%{
+        -webkit-transform: perspective(1000px) rotateY(0deg);
+                transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        -webkit-transform: perspective(1000px) rotateY(360deg);
+                transform: perspective(1000px) rotateY(360deg);
+    }
    }
    @keyframes rotate{
     0%{
-        transform: perspective(1000px) rotateY(0deg);
+        -webkit-transform: perspective(1000px) rotateY(0deg);
+                transform: perspective(1000px) rotateY(0deg);
     }
     100%{
-        transform: perspective(1000px) rotateY(360deg);
+        -webkit-transform: perspective(1000px) rotateY(360deg);
+                transform: perspective(1000px) rotateY(360deg);
     }
    } 
    .main span{
     position: absolute;
     top: 0;
     left: 0;
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
     width: 100%;
     height: 100%;
-    transform-origin: center;
-    transform: rotateY(calc(var(--i)*75deg)) translateZ(350PX);
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: rotateY(calc(var(--i)*75deg)) translateZ(350PX);
+            transform: rotateY(calc(var(--i)*75deg)) translateZ(350PX);
    }
    .main span img{
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
     height: 100%;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
     transition: 2s;
     
    }
    
    .contaier{
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow: hidden;
+    background: -webkit-gradient(linear,left top, right top,from(red), to(green));
+    background: -o-linear-gradient(left,red, green);
     background: linear-gradient(to right,red, green);
    }
 </style>
